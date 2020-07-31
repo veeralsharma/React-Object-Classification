@@ -21,7 +21,9 @@ function App() {
     await setStatus(
       `${status}${predictions[0].className}/${predictions[0].probability}`
     );
-    setTimeout(predict(video, context, model, canvas), 17);
+    setTimeout(() => {
+      predict(video, context, model, canvas)
+    }, 17);
   }
 
   useEffect(() => {
@@ -42,7 +44,7 @@ function App() {
 
   return (
     <Fragment>
-      <video id="video" autoplay="true" muted="true" playsInline="true"></video>
+      <video id="video" autoPlay muted playsInline></video>
       <canvas id="canvas" width="720" height="560" style={{display:"none"}}></canvas>
       <div><h3 style={{color:"white"}}>{status}</h3></div>
     </Fragment>
