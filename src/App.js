@@ -21,7 +21,7 @@ function App() {
     await setStatus(
       `${status}${predictions[0].className}/${predictions[0].probability}`
     );
-    setInterval(predict(video, context, model, canvas), 17);
+    setTimeout(predict(video, context, model, canvas), 17);
   }
 
   useEffect(() => {
